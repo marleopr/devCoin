@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# `Bolsa de valores - EM CONSTRUÇÃO`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="src\assets\climaDev.png" width="300px">
 
-## Available Scripts
+Site de pesquisas climáticas utilizando a API [OpenWeather](https://openweathermap.org/).
 
-In the project directory, you can run:
+# `Link`
 
-### `npm start`
+https://marleo-climadev.vercel.app/
+# `Descrição`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+O site criado é uma aplicação web de pesquisas climáticas através da pesquisa pelo nome da cidade ou pelo botão de geolocalização. O site oferece uma experiência intuitiva, permitindo aos usuários pesquisar as condições climáticas de:
+- Temperatura atual; 
+- Sensação térmica;
+- Temperatura mínima e máxima do dia;
+- Nível de umidade relativa do ar;
+- Nível de pressão do ar;
+- Velocidade do vento;
+- Rajada de vento quando disponível;
+- Chuva e neve na última hora quando disponível;
+- Qualidade do ar;
+- Horário do nascer do sol;
+- Horário do pôr do sol;
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Além da previsão do tempo para os próximos 5 dias, tudo isso de forma fácil e rápida.
 
-### `npm test`
+O repositório do projeto pode ser encontrado [aqui](https://github.com/marleopr/climadev)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Tela de inicial                             | Clima pesquisado                               |
+| ------------------------------------------- | ---------------------------------------------- |
+| <img src="src\assets\TelaInicial.jpg" > | <img src="src\assets\Clima.jpg" > |
 
-### `npm run build`
+# `Passo a Passo para Instalação do Projeto React:`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##### Pré-requisitos:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Certifique-se de ter o Node.js e o npm (ou yarn) instalados em sua máquina. Você pode baixá-los em https://nodejs.org/.
+Git instalado em sua máquina. Você pode baixá-lo em https://git-scm.com/.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##### Clone o Repositório:
 
-### `npm run eject`
+Abra o terminal (ou Git Bash) e navegue até o diretório onde deseja clonar o projeto.
+Execute o comando: git clone https://github.com/marleopr/climadev.git
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+##### Acesse o Diretório do Projeto:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Navegue até o diretório do projeto: cd nome-do-repositorio
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+##### Instale as Dependências:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Execute o comando: npm install
+Este comando irá instalar todas as dependências listadas no arquivo package.json.
+Configure as Variáveis de Ambiente (se necessário):
 
-## Learn More
+##### Execute o Projeto:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Após instalar as dependências, inicie o servidor de desenvolvimento com o comando: npm start
+O projeto será executado e estará disponível em http://localhost:3000 no seu navegador.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+##### Personalize o Projeto:
 
-### Code Splitting
+Agora você pode personalizar o projeto de acordo com suas necessidades, fazendo alterações nos arquivos do diretório "src".
+Construa o Projeto (Opcional):
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Se desejar criar uma versão otimizada do projeto para implantação, execute o comando: npm run build
+Isso criará uma pasta "build" com os arquivos otimizados para produção.
+Implante o Projeto (Opcional):
 
-### Analyzing the Bundle Size
+Você pode implantar o projeto em um servidor web ou em plataformas de hospedagem, como GitHub Pages, Vercel, Netlify, entre outros.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# `Tecnologias utilizadas`
 
-### Making a Progressive Web App
+<div>
+<img src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white">
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+<img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white">
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+<img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white">
+<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white">
+<img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white">
+</div>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# `Autor`
 
-### Advanced Configuration
+#### [Márleo Piber da Rosa](https://github.com/marleopr)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img src="src\assets\marleopr.jpg">
