@@ -1,9 +1,11 @@
-import './App.css';
-import HomePage from './homePage/HomePage';
+// import './App.css';
+import './components/styled.css';
+import HomePage from './pages/homePage/HomePage';
 
 function App() {
   return (
     <div>
+      {/* <Acoes /> */}
       <HomePage />
     </div>
   );
