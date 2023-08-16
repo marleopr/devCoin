@@ -7,8 +7,12 @@ import CardCripto from "../../components/CardCripto";
 import Cripto from "../acoes/Cripto";
 import SquareLoader from "../../components/SquareLoader";
 import CoinLoader from "../../components/CoinLoader";
+import { goToHomePage } from "../../routes/Cordinator";
+import { useNavigate } from "react-router-dom";
 
 const HomePageCripto = () => {
+    const navigate = useNavigate()
+
     const [dataCrypto, setDataCrypto] = useState([]);
     // const tickers = 'COGN3,^BVSP';
     // const tickers = 'amer3';
@@ -63,6 +67,8 @@ const HomePageCripto = () => {
             <div>
                 <input type="text" placeholder="Buscar" value={nomeCrypto.toUpperCase()} onChange={(event) => setNomeCrypto(event.target.value)} />
                 <button onClick={handleCrypto} disabled={!nomeCrypto}>Buscar</button>
+                <buton onClick={() => goToHomePage(navigate)} >Voltar</buton>
+
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
                 {loading ? (

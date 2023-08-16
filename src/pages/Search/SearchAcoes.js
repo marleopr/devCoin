@@ -6,8 +6,13 @@ import { BASE_URL } from "../../constants/BASE_URL";
 import Card from "../../components/Card";
 import Acoes from "../acoes/Acoes";
 import SquareLoader from "../../components/SquareLoader";
+import CoinLoader from "../../components/CoinLoader";
+import { goToHomePage } from "../../routes/Cordinator";
+import { useNavigate } from "react-router-dom";
 
-const HomePage = () => {
+const SearchAcoes = () => {
+    const navigate = useNavigate()
+
     const [data, setData] = useState([]);
     // const tickers = 'COGN3,^BVSP';
     // const tickers = 'amer3';
@@ -58,15 +63,16 @@ const HomePage = () => {
     return (
         <div className="App">
             <ToastContainer />
-            <h2 style={{ color: 'white', textShadow: '-1px 0 black, 0 1px #0a95ff, 1px 0 #ff0000, 0 -1px black', letterSpacing: '3px' }}>Bolsa de Valores</h2>
+            <h2 style={{ color: 'white', textShadow: '-1px 0 black, 0 1px #0a95ff, 1px 0 #ff0000, 0 -1px black', letterSpacing: '3px' }}>Ações</h2>
             <Acoes handleAcoesClick={handleAcoesClick} />
             <div>
                 <input type="text" placeholder="Buscar" value={nome.toUpperCase()} onChange={(event) => setNome(event.target.value)} />
                 <button onClick={handleAcoes} disabled={!nome}>Buscar</button>
+                <buton onClick={() => goToHomePage(navigate)} >Voltar</buton>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
                 {loading ? (
-                    <p>Carregando...</p>
+                    <CoinLoader />
                 ) : (
                     data && data.length > 0 ? (
                         <Card data={data} />
@@ -78,4 +84,4 @@ const HomePage = () => {
         </div>
     );
 }
-export default HomePage
+export default SearchAcoes
