@@ -430,6 +430,8 @@
 .container {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  justify-content: center;
 }
 
 .radio-wrapper {
@@ -570,6 +572,16 @@
   --font-size: 11px;
 }
 
+.selected-btn {
+  --primary: #8b00ff;
+  --shadow-primary: #00e572;
+}
+
+.input:checked + .selected-btn {
+  /* Defina as cores para os botões selecionados */
+  --primary: #8b00ff;
+  --shadow-primary: #00e572;
+}
 .btn:after,
 .btn:before {
   content: "";
@@ -729,4 +741,30 @@
   top: 0;
   left: 81%;
   line-height: 6.2px;
+}
+
+/* BARRA DE ROLAGEM */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #212121;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #2b2b2b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 140, 255);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(7, 110, 194);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: rgb(1, 80, 144);
 }

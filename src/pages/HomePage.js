@@ -17,8 +17,8 @@ const HomePage = () => {
                     </div>
                 </div>
                 <div onClick={() => goToSearchCriptos(navigate)} className="radio-wrapper">
-                    <input className="input" name="btn" id="value-2" checked="true" type="radio" />
-                    <div className="btn">
+                    <input className="input" name="btn" id="value-2" type="radio" />
+                    <div className="btn selected-btn">
                         Criptos<span aria-hidden="false"></span>
                         <span className="btn__glitch" aria-hidden="false">Criptos</span>
                         <label className="number">Coin</label>
@@ -29,6 +29,14 @@ const HomePage = () => {
                     <div className="btn">
                         Cotações<span aria-hidden="false"></span>
                         <span className="btn__glitch" aria-hidden="false">Cotações</span>
+                        <label className="number">$</label>
+                    </div>
+                </div>
+                <div onClick={() => goToCotacoes(navigate)} className="radio-wrapper">
+                    <input className="input" name="btn" id="value-4" type="radio" />
+                    <div className="btn selected-btn">
+                        Taxas<span aria-hidden="false"></span>
+                        <span className="btn__glitch" aria-hidden="false">Inflação</span>
                         <label className="number">$</label>
                     </div>
                 </div>
