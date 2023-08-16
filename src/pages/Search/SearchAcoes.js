@@ -4,7 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { BASE_URL } from "../../constants/BASE_URL";
 import Card from "../../components/Card";
-import Acoes from "../acoes/Acoes";
+import AcoesList from "../acoesList/AcoesList";
 import SquareLoader from "../../components/SquareLoader";
 import CoinLoader from "../../components/CoinLoader";
 import { goToHomePage } from "../../routes/Cordinator";
@@ -64,7 +64,7 @@ const SearchAcoes = () => {
         <div className="App">
             <ToastContainer />
             <h2 style={{ color: 'white', textShadow: '-1px 0 black, 0 1px #0a95ff, 1px 0 #ff0000, 0 -1px black', letterSpacing: '3px' }}>Ações</h2>
-            <Acoes handleAcoesClick={handleAcoesClick} />
+            <AcoesList handleAcoesClick={handleAcoesClick} />
             <div>
                 <input type="text" placeholder="Buscar" value={nome.toUpperCase()} onChange={(event) => setNome(event.target.value)} />
                 <button onClick={handleAcoes} disabled={!nome}>Buscar</button>

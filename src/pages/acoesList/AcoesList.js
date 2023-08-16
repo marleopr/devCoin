@@ -2,7 +2,7 @@ import axios from "axios"
 import { BASE_URL } from "../../constants/BASE_URL"
 import { useEffect, useState } from "react"
 
-const Acoes = ({ handleAcoesClick }) => {
+const AcoesList = ({ handleAcoesClick }) => {
     const [allData, setAllData] = useState([])
 
     useEffect(() => {
@@ -40,4 +40,4 @@ const Acoes = ({ handleAcoesClick }) => {
         </div>
     )
 }
-export default Acoes
+export default AcoesList

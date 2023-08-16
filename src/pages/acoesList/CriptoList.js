@@ -2,7 +2,7 @@ import axios from "axios"
 import { BASE_URL } from "../../constants/BASE_URL"
 import { useEffect, useState } from "react"
 
-const Cripto = ({ handleCryptoClick }) => {
+const CriptoList = ({ handleCryptoClick }) => {
     const [allDataCrypto, setAllDataCrypto] = useState([])
 
     useEffect(() => {
@@ -31,4 +31,4 @@ const Cripto = ({ handleCryptoClick }) => {
         </div>
     )
 }
-export default Cripto
+export default CriptoList

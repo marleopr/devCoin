@@ -7,6 +7,9 @@ export const goToSearchAcoes = (navigate) => {
 export const goToSearchCriptos = (navigate) => {
     navigate("/searchcriptos")
 }
+export const goToCotacoes = (navigate) => {
+    navigate("/cotacoes")
+}
 // export const goBack = (navigate) => {
 //     navigate(-1)
 // }
