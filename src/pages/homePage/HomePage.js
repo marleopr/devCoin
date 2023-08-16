@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-// import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import { BASE_URL } from "../../constants/BASE_URL";
 import Card from "../../components/Card";
 import Acoes from "../acoes/Acoes";
+import SquareLoader from "../../components/SquareLoader";
 
 const HomePage = () => {
     const [data, setData] = useState([]);
@@ -33,11 +35,11 @@ const HomePage = () => {
             setLoading(false)
             setNome("")
             console.log(res.data.results);
-            // toast.success("Ação pesquisada!")
+            toast.success("Ação encontrada!")
         } catch (error) {
             console.error('Error fetching data:', error);
             setLoading(false)
-            // toast.error('Error fetching data');
+            toast.error('Ação não encontrada!');
         }
     };
 
@@ -55,21 +57,21 @@ const HomePage = () => {
 
     return (
         <div className="App">
-            {/* <ToastContainer /> */}
-            <h1>Bolsa de Valores</h1>
+            <ToastContainer />
+            <h2 style={{ color: 'white', textShadow: '-1px 0 black, 0 1px #0a95ff, 1px 0 #ff0000, 0 -1px black', letterSpacing: '3px' }}>Bolsa de Valores</h2>
             <Acoes handleAcoesClick={handleAcoesClick} />
             <div>
                 <input type="text" placeholder="Buscar" value={nome.toUpperCase()} onChange={(event) => setNome(event.target.value)} />
                 <button onClick={handleAcoes} disabled={!nome}>Buscar</button>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px', border: 'solid 1px green' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
                 {loading ? (
                     <p>Carregando...</p>
                 ) : (
                     data && data.length > 0 ? (
                         <Card data={data} />
                     ) : (
-                        <p>Adicionar alguma coisa</p>
+                        <SquareLoader />
                     )
                 )}
             </div>

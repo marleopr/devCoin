@@ -1,4 +1,3 @@
-import { format } from "date-fns";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 
 const Card = ({ dataCrypto }) => {
@@ -11,9 +10,11 @@ const Card = ({ dataCrypto }) => {
         }).format(value);
     };
 
-    const formatDateAndTime = (dateTimeString) => {
-        const parsedDate = new Date(dateTimeString);
-        return format(parsedDate, "dd/MM/yyyy, HH:mm:ss");
+    const formatDateAndTime = (timestamp) => {
+        const parsedDate = new Date(timestamp * 1000); // Convertendo para milissegundos
+        const options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        const formattedDate = parsedDate.toLocaleDateString('pt-BR', options); // Formatando para string legível
+        return formattedDate;
     };
 
     return (

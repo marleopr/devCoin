@@ -1,9 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-// import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import { BASE_URL } from "../../constants/BASE_URL";
 import CardCripto from "../../components/CardCripto";
 import Cripto from "../acoes/Cripto";
+import SquareLoader from "../../components/SquareLoader";
+import CoinLoader from "../../components/CoinLoader";
 
 const HomePageCripto = () => {
     const [dataCrypto, setDataCrypto] = useState([]);
@@ -32,11 +35,11 @@ const HomePageCripto = () => {
             setLoading(false)
             setNomeCrypto("")
             console.log(res.data);
-            // toast.success("Ação pesquisada!")
+            toast.success("Criptomoeda encontrada!")
         } catch (error) {
             console.error('Error fetching data:', error);
             setLoading(false)
-            // toast.error('Error fetching data');
+            toast.error('Criptomoeda não encontrada!');
         }
     };
 
@@ -54,25 +57,25 @@ const HomePageCripto = () => {
 
     return (
         <div className="App">
-            {/* <ToastContainer /> */}
-            <h1>Cryptos</h1>
+            <h2 style={{ color: 'white', textShadow: '-1px 0 black, 0 1px #0a95ff, 1px 0 #ff0000, 0 -1px black', letterSpacing: '3px' }}>Criptomoedas</h2>
+            <ToastContainer />
             <Cripto handleCryptoClick={handleCryptoClick} />
             <div>
                 <input type="text" placeholder="Buscar" value={nomeCrypto.toUpperCase()} onChange={(event) => setNomeCrypto(event.target.value)} />
                 <button onClick={handleCrypto} disabled={!nomeCrypto}>Buscar</button>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px', border: 'solid 1px green' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
                 {loading ? (
-                    <p>Carregando...</p>
+                    <CoinLoader />
                 ) : (
                     dataCrypto && dataCrypto.length > 0 ? (
                         <CardCripto dataCrypto={dataCrypto} />
                     ) : (
-                        <p>Adicionar alguma coisa</p>
+                        <SquareLoader />
                     )
                 )}
             </div>
-        </div>
+        </div >
     );
 }
 export default HomePageCripto

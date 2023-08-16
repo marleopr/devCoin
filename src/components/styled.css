@@ -188,7 +188,8 @@
 
 /* ACOES */
 .acoes-container {
-  width: 98vw;
+  width: 100%;
+  box-sizing: border-box;
   /* border: 1px solid red; */
   height: 100px; /* Removendo a altura fixa */
   overflow-x: auto; /* Adicionando overflow-x para permitir a rolagem horizontal */
@@ -214,9 +215,211 @@
   padding: 10px;
   font-weight: bold;
   font-size: 18px;
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 
 .acao-item:hover {
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  text-shadow: -1px 0 black, 0 1px #0a37ff, 1px 0 #ff0000, 0 -1px rgb(0, 81, 255);
+  background-color: #343434;
+}
+.acao-item:active {
+  background-color: #121212;
+}
+
+/* SQUARE LOADER */
+.cube-container {
+  width: 200px;
+  height: 200px;
+  perspective: 800px;
+  margin: 50px auto;
+}
+
+.cube {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: rotate 8s infinite linear;
+}
+
+.face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  color: rgb(0, 140, 255);
+  font-size: 18px;
+  text-align: center;
+  line-height: 200px;
+  background: transparent;
+  opacity: 0.9;
+  border: 2px solid;
+  border-image: linear-gradient(
+      to right,
+      #ff6b6b,
+      #355c7d,
+      #557d35,
+      #cfcf16,
+      #0059ff
+    )
+    1;
+  box-shadow: 0 0 100px rgb(0, 140, 255);
+}
+
+.front {
+  transform: translateZ(100px);
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(100px);
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+.bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+.cube-container:hover .cube {
+  animation-play-state: paused;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+/* FOOTER */
+.card-footer {
+  display: flex;
+  height: 70px;
+  width: 270px;
+}
+
+.card-footer svg {
+  position: absolute;
+  display: flex;
+  width: 60%;
+  height: 100%;
+  font-size: 24px;
+  font-weight: 700;
+  opacity: 1;
+  transition: opacity 0.25s;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.card-footer .social-link1,
+.card-footer .social-link2,
+.card-footer .social-link3,
+.card-footer .social-link4 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  color: whitesmoke;
+  font-size: 24px;
+  text-decoration: none;
+  transition: 0.25s;
+  border-radius: 50px;
+}
+
+.card-footer svg {
+  transform: scale(1);
+}
+
+.card-footer .social-link1:hover {
+  background-color: #1a1e22;
+  animation: bounce_613 0.4s linear;
+}
+
+.card-footer .social-link2:hover {
+  background-color: #0a66c2;
+  animation: bounce_613 0.4s linear;
+}
+
+.card-footer .social-link3:hover {
+  background-color: #f78000;
+  animation: bounce_613 0.4s linear;
+}
+
+.card-footer .social-link4:hover {
+  background-color: #25d366;
+  animation: bounce_613 0.4s linear;
+}
+
+@keyframes bounce_613 {
+  40% {
+    transform: scale(1.4);
+  }
+
+  60% {
+    transform: scale(0.8);
+  }
+
+  80% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* COINLOADER */
+.loader-coin {
+  transform: translateZ(1px);
+}
+
+.loader-coin:after {
+  content: "$";
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 32px;
+  font-weight: bold;
+  background: #ffd700;
+  color: #daa520;
+  border: 4px double;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+  animation: coin-flip 4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+@keyframes coin-flip {
+  0%,
+  100% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  50% {
+    transform: rotateY(1800deg);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+
+  100% {
+    transform: rotateY(3600deg);
+  }
 }
