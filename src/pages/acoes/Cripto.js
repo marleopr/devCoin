@@ -2,18 +2,18 @@ import axios from "axios"
 import { BASE_URL } from "../../constants/BASE_URL"
 import { useEffect, useState } from "react"
 
-const Acoes = ({ handleAcoesClick }) => {
-    const [allData, setAllData] = useState([])
+const Cripto = ({ handleCryptoClick }) => {
+    const [allDataCrypto, setAllDataCrypto] = useState([])
 
     useEffect(() => {
-        handleAllAcoes()
+        handleAllCrypto()
     }, [])
 
-    const handleAllAcoes = async () => {
+    const handleAllCrypto = async () => {
         try {
-            const res = await axios.get(`${BASE_URL}available`)
-            setAllData(res.data.stocks)
-            console.log(res.data.stocks)
+            const res = await axios.get(`${BASE_URL}v2/crypto/available`)
+            setAllDataCrypto(res.data.coins)
+            console.log(res.data.coins)
         } catch (error) {
             console.error(error)
         }
@@ -22,7 +22,7 @@ const Acoes = ({ handleAcoesClick }) => {
     return (
         // <div>
         //     <div style={{ width: '100vw', border: '1px solid red', height: '100px', overflow: 'auto', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr', textAlign: 'center' }}>
-        //         {allData.map((item, index) => (
+        //         {allDataCrypto.map((item, index) => (
         //             <div key={index} onClick={() => handleAcoesClick(item)} >
         //                 <strong>{item}</strong>
         //             </div>
@@ -31,8 +31,8 @@ const Acoes = ({ handleAcoesClick }) => {
         // </div>
         <div className="acoes-container">
             <div className="acoes-list">
-                {allData.map((item, index) => (
-                    <div key={index} className="acao-item" onClick={() => handleAcoesClick(item)}>
+                {allDataCrypto.map((item, index) => (
+                    <div key={index} className="acao-item" onClick={() => handleCryptoClick(item)}>
                         <strong>{item}</strong>
                     </div>
                 ))}
@@ -40,4 +40,4 @@ const Acoes = ({ handleAcoesClick }) => {
         </div>
     )
 }
-export default Acoes
+export default Cripto

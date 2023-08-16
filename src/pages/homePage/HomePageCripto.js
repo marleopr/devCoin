@@ -2,37 +2,36 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 // import { ToastContainer, toast } from "react-toastify";
 import { BASE_URL } from "../../constants/BASE_URL";
-import Card from "../../components/Card";
-import Acoes from "../acoes/Acoes";
+import CardCripto from "../../components/CardCripto";
+import Cripto from "../acoes/Cripto";
 
-const HomePage = () => {
-    const [data, setData] = useState([]);
+const HomePageCripto = () => {
+    const [dataCrypto, setDataCrypto] = useState([]);
     // const tickers = 'COGN3,^BVSP';
     // const tickers = 'amer3';
-    const [nome, setNome] = useState("")
+    const [nomeCrypto, setNomeCrypto] = useState("")
     const [loading, setLoading] = useState(false)
     // const [error, setError] = useState(null)
-    const [buttonClicked, setButtonClicked] = useState(false);
+    const [buttonClickedCrypto, setButtonClickedCrypto] = useState(false);
 
 
     useEffect(() => {
-        if (buttonClicked) {
-            handleAcoes();
-            setButtonClicked(false)
+        if (buttonClickedCrypto) {
+            handleCrypto();
+            setButtonClickedCrypto(false)
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [buttonClicked]);
+    }, [buttonClickedCrypto]);
 
-    const handleAcoes = async () => {
+    const handleCrypto = async () => {
         // setError(null)
         setLoading(true)
         try {
-            // const res = await axios.get(`https://brapi.dev/api/quote/PETR4%2C%5EBVSP?range=1d&interval=1d&fundamental=true&dividends=true`);
-            const res = await axios.get(`${BASE_URL}quote/${nome}?range=1d&interval=1d&fundamental=true&dividends=true`);
-            setData(res.data.results);
+            const res = await axios.get(`${BASE_URL}v2/crypto?coin=${nomeCrypto}&currency=BRL`);
+            setDataCrypto(res.data.coins);
             setLoading(false)
-            setNome("")
-            console.log(res.data.results);
+            setNomeCrypto("")
+            console.log(res.data);
             // toast.success("Ação pesquisada!")
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -41,11 +40,11 @@ const HomePage = () => {
         }
     };
 
-    const handleAcoesClick = async (selectedItem) => {
+    const handleCryptoClick = async (selectedItemCrypto) => {
         setLoading(true);
         try {
-            const res = await axios.get(`${BASE_URL}quote/${selectedItem}?range=1d&interval=1d&fundamental=true&dividends=true`);
-            setData(res.data.results);
+            const res = await axios.get(`${BASE_URL}v2/crypto?coin=${selectedItemCrypto}&currency=BRL`);
+            setDataCrypto(res.data.coins);
             setLoading(false);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -56,18 +55,18 @@ const HomePage = () => {
     return (
         <div className="App">
             {/* <ToastContainer /> */}
-            <h1>Bolsa de Valores</h1>
-            <Acoes handleAcoesClick={handleAcoesClick} />
+            <h1>Cryptos</h1>
+            <Cripto handleCryptoClick={handleCryptoClick} />
             <div>
-                <input type="text" placeholder="Buscar" value={nome.toUpperCase()} onChange={(event) => setNome(event.target.value)} />
-                <button onClick={handleAcoes} disabled={!nome}>Buscar</button>
+                <input type="text" placeholder="Buscar" value={nomeCrypto.toUpperCase()} onChange={(event) => setNomeCrypto(event.target.value)} />
+                <button onClick={handleCrypto} disabled={!nomeCrypto}>Buscar</button>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px', border: 'solid 1px green' }}>
                 {loading ? (
                     <p>Carregando...</p>
                 ) : (
-                    data && data.length > 0 ? (
-                        <Card data={data} />
+                    dataCrypto && dataCrypto.length > 0 ? (
+                        <CardCripto dataCrypto={dataCrypto} />
                     ) : (
                         <p>Adicionar alguma coisa</p>
                     )
@@ -76,4 +75,4 @@ const HomePage = () => {
         </div>
     );
 }
-export default HomePage
+export default HomePageCripto

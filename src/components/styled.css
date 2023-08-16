@@ -185,3 +185,38 @@
   color: red;
   margin-left: 5px;
 }
+
+/* ACOES */
+.acoes-container {
+  width: 98vw;
+  /* border: 1px solid red; */
+  height: 100px; /* Removendo a altura fixa */
+  overflow-x: auto; /* Adicionando overflow-x para permitir a rolagem horizontal */
+  /* white-space: nowrap; Impedindo a quebra de linha dos itens */
+  position: relative;
+}
+
+.acoes-list {
+  display: inline-block; /* Alterando para inline-block para que a lista fique em uma linha */
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.acao-item {
+  display: inline-flex; /* Alterando para inline-flex para que os itens fiquem em uma linha */
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(0, 140, 255);
+  color: rgb(0, 140, 255);
+  transition: box-shadow 0.3s;
+  cursor: pointer;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: #fff;
+}
+
+.acao-item:hover {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}

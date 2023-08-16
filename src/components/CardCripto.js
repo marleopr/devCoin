@@ -1,7 +1,7 @@
 import { format } from "date-fns";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 
-const Card = ({ data }) => {
+const Card = ({ dataCrypto }) => {
 
     const formatCurrency = (value) => {
         return new Intl.NumberFormat('pt-BR', {
@@ -18,19 +18,19 @@ const Card = ({ data }) => {
 
     return (
         <>
-            {data.map((item) => (
+            {dataCrypto.map((item) => (
                 <div key={item.symbol} className="card">
                     <div className="top-section">
                         <div className="border"></div>
                         <div className="icons">
                             <div className="logo">
-                                <img style={{ borderRadius: '20%' }} src={item.logourl} alt={item.logourl} />
+                                <img style={{ borderRadius: '20%' }} src={item.coinImageUrl} alt={item.coinImageUrl} />
                                 <h6>{formatDateAndTime(item.regularMarketTime)}</h6>
                             </div>
                             {/* <div className="social-media"> */}
                             <div className="data-container">
                                 <div className="symbol">
-                                    <strong>{item.symbol}</strong>
+                                    <strong>{item.coin}</strong>
                                 </div>
                                 <div className="market-cap">
                                     <h5>Valor de mercado: {formatCurrency(item.marketCap)}</h5>
@@ -49,7 +49,7 @@ const Card = ({ data }) => {
                         </div>
                     </div>
                     <div className="bottom-section">
-                        <span className="title">{item.longName}</span>
+                        <span className="title">{item.coinName}</span>
                         <div className="row row1">
                             <div className="item">
                                 <span className="big-text">{formatCurrency(item.regularMarketPrice)}</span>
