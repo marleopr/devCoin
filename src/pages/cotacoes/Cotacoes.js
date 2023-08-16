@@ -24,7 +24,7 @@ const Cotacoes = () => {
             const res = await axios.get(`${BASE_URL}v2/currency?currency=USD-BRL%2CEUR-BRL%2CGBP-BRL`);
             setDataCotacoes(res.data.currency);
             setLoading(false)
-            console.log(res.data);
+            // console.log(res.data);
         } catch (error) {
             console.error('Error fetching data:', error);
             setLoading(false)

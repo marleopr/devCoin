@@ -13,7 +13,7 @@ const AcoesList = ({ handleAcoesClick }) => {
         try {
             const res = await axios.get(`${BASE_URL}available`)
             setAllData(res.data.stocks)
-            console.log(res.data.stocks)
+            // console.log(res.data.stocks)
         } catch (error) {
             console.error(error)
         }

@@ -39,7 +39,7 @@ const SearchAcoes = () => {
             setData(res.data.results);
             setLoading(false)
             setNome("")
-            console.log(res.data.results);
+            // console.log(res.data.results);
             toast.success("Ação encontrada!")
         } catch (error) {
             console.error('Error fetching data:', error);

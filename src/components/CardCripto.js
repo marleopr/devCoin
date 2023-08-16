@@ -2,12 +2,14 @@ import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 
 const Card = ({ dataCrypto }) => {
 
-    const formatCurrency = (value) => {
-        return new Intl.NumberFormat('pt-BR', {
+    const formatCurrency = (value, notation = 'standard') => {
+        const options = {
             style: 'currency',
             currency: 'BRL',
-            notation: 'compact'
-        }).format(value);
+            notation: notation
+        };
+
+        return new Intl.NumberFormat('pt-BR', options).format(value);
     };
 
     const formatDateAndTime = (timestamp) => {
@@ -34,7 +36,7 @@ const Card = ({ dataCrypto }) => {
                                     <strong>{item.coin}</strong>
                                 </div>
                                 <div className="market-cap">
-                                    <h5>Valor de mercado: {formatCurrency(item.marketCap)}</h5>
+                                    <h5>Valor de mercado: {formatCurrency(item.marketCap, 'compact')}</h5>
                                 </div>
                                 <div className="variation">
                                     <h5>Variação (dia):

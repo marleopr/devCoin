@@ -10,7 +10,7 @@ import CoinLoader from "../../components/CoinLoader";
 import { goToHomePage } from "../../routes/Cordinator";
 import { useNavigate } from "react-router-dom";
 
-const HomePageCripto = () => {
+const SearchCriptos = () => {
     const navigate = useNavigate()
 
     const [dataCrypto, setDataCrypto] = useState([]);
@@ -38,7 +38,7 @@ const HomePageCripto = () => {
             setDataCrypto(res.data.coins);
             setLoading(false)
             setNomeCrypto("")
-            console.log(res.data);
+            // console.log(res.data);
             toast.success("Criptomoeda encontrada!")
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -84,4 +84,4 @@ const HomePageCripto = () => {
         </div >
     );
 }
-export default HomePageCripto
+export default SearchCriptos
