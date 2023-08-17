@@ -39,7 +39,7 @@ const CardCotacoes = ({ dataCotacoes }) => {
                             <div className="border"></div>
                             <div className="icons">
                                 <div className="logo">
-                                    <img style={{ width: '50px' }} src={getFlag(item.fromCurrency)} alt={item.fromCurrency} />
+                                    <img style={{ borderRadius: '20%', width: '50px' }} src={getFlag(item.fromCurrency)} alt={item.fromCurrency} />
                                     <h6>{formatDateAndTime(item.updatedAtTimestamp)}</h6>
                                 </div>
                                 <div className="data-container">

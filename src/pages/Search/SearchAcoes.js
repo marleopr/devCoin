@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { BASE_URL } from "../../constants/BASE_URL";
-import Card from "../../components/Card";
+import CardAcoes from "../../components/CardAcoes";
 import AcoesList from "../acoesList/AcoesList";
 import SquareLoader from "../../components/SquareLoader";
 import CoinLoader from "../../components/CoinLoader";
@@ -56,7 +56,7 @@ const SearchAcoes = () => {
             setLoading(false);
         } catch (error) {
             console.error('Error fetching data:', error);
-            setLoading(false);
+            setLoading(false)
         }
     };
 
@@ -68,14 +68,14 @@ const SearchAcoes = () => {
             <div>
                 <input type="text" placeholder="Buscar" value={nome.toUpperCase()} onChange={(event) => setNome(event.target.value)} />
                 <button onClick={handleAcoes} disabled={!nome}>Buscar</button>
-                <buton onClick={() => goToHomePage(navigate)} >Voltar</buton>
+                <button onClick={() => goToHomePage(navigate)} >Voltar</button>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
                 {loading ? (
                     <CoinLoader />
                 ) : (
                     data && data.length > 0 ? (
-                        <Card data={data} />
+                        <CardAcoes data={data} />
                     ) : (
                         <SquareLoader />
                     )

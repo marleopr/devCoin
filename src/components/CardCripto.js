@@ -27,7 +27,7 @@ const Card = ({ dataCrypto }) => {
                         <div className="border"></div>
                         <div className="icons">
                             <div className="logo">
-                                <img style={{ borderRadius: '20%' }} src={item.coinImageUrl} alt={item.coinImageUrl} />
+                                <img style={{ borderRadius: '20%', width: '50px' }} src={item.coinImageUrl} alt={item.coinImageUrl} />
                                 <h6>{formatDateAndTime(item.regularMarketTime)}</h6>
                             </div>
                             {/* <div className="social-media"> */}

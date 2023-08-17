@@ -1,7 +1,7 @@
 import { format } from "date-fns";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 
-const Card = ({ data }) => {
+const CardAcoes = ({ data }) => {
 
     const formatCurrency = (value, notation = 'standard') => {
         const options = {
@@ -27,7 +27,7 @@ const Card = ({ data }) => {
                         <div className="border"></div>
                         <div className="icons">
                             <div className="logo">
-                                <img style={{ borderRadius: '20%' }} src={item.logourl} alt={item.logourl} />
+                                <img style={{ borderRadius: '20%', width: '50px' }} src={item.logourl} alt={item.logourl} />
                                 <h6>{formatDateAndTime(item.regularMarketTime)}</h6>
                             </div>
                             {/* <div className="social-media"> */}
@@ -73,4 +73,4 @@ const Card = ({ data }) => {
         </>
     )
 }
-export default Card
+export default CardAcoes

@@ -67,7 +67,7 @@ const SearchCriptos = () => {
             <div>
                 <input type="text" placeholder="Buscar" value={nomeCrypto.toUpperCase()} onChange={(event) => setNomeCrypto(event.target.value)} />
                 <button onClick={handleCrypto} disabled={!nomeCrypto}>Buscar</button>
-                <buton onClick={() => goToHomePage(navigate)} >Voltar</buton>
+                <button onClick={() => goToHomePage(navigate)} >Voltar</button>
 
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
