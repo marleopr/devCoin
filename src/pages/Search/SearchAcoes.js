@@ -4,7 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { BASE_URL } from "../../constants/BASE_URL";
 import CardAcoes from "../../components/CardAcoes";
-import AcoesList from "../acoesList/AcoesList";
+import AcoesList from "../lists/AcoesList";
 import SquareLoader from "../../components/SquareLoader";
 import CoinLoader from "../../components/CoinLoader";
 import { goToHomePage } from "../../routes/Cordinator";

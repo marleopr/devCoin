@@ -10,6 +10,9 @@ export const goToSearchCriptos = (navigate) => {
 export const goToCotacoes = (navigate) => {
     navigate("/cotacoes")
 }
+export const goToTaxas = (navigate) => {
+    navigate("/taxas")
+}
 // export const goBack = (navigate) => {
 //     navigate(-1)
 // }

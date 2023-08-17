@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { goToCotacoes, goToSearchAcoes, goToSearchCriptos } from "../routes/Cordinator"
+import { goToCotacoes, goToSearchAcoes, goToSearchCriptos, goToTaxas } from "../routes/Cordinator"
 
 const RadioButtons = () => {
     const navigate = useNavigate()
@@ -26,7 +26,7 @@ const RadioButtons = () => {
                 <div className="selected"></div>
             </label>
             &nbsp;
-            <label onClick={() => goToCotacoes(navigate)} id="bottomright" className="container">
+            <label onClick={() => goToTaxas(navigate)} id="bottomright" className="container">
                 <input name="my-radio-button" type="radio" />
                 <label id="br"> <br />Taxas</label>
                 <div className="selected"></div>
