@@ -5,10 +5,12 @@ import SearchCriptos from "../pages/criptos/SearchCriptos"
 import Cotacoes from "../pages/cotacoes/Cotacoes"
 import Taxas from "../pages/taxas/Taxas"
 import ErrorPage from "../pages/ErrorPage"
+import Header from "../components/Header"
 
 export const Router = () => {
     return (
         <BrowserRouter>
+            <Header />
             <Routes>
                 <Route index element={<HomePage />} />
                 <Route path="searchacoes" element={<SearchAcoes />} />
