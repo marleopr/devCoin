@@ -9,35 +9,31 @@ import SquareLoader from "../../components/SquareLoader";
 import CoinLoader from "../../components/CoinLoader";
 import { goToHomePage } from "../../routes/Cordinator";
 import { useNavigate } from "react-router-dom";
+import useDebounce from "../../components/useDebounce";
 
 const SearchCriptos = () => {
     const navigate = useNavigate()
 
     const [dataCrypto, setDataCrypto] = useState([]);
-    // const tickers = 'COGN3,^BVSP';
-    // const tickers = 'amer3';
     const [nomeCrypto, setNomeCrypto] = useState("")
     const [loading, setLoading] = useState(false)
-    // const [error, setError] = useState(null)
-    const [buttonClickedCrypto, setButtonClickedCrypto] = useState(false);
 
+    const debouncedNomeCrypto = useDebounce(nomeCrypto, 800)
 
     useEffect(() => {
-        if (buttonClickedCrypto) {
+        if (debouncedNomeCrypto) {
             handleCrypto();
-            setButtonClickedCrypto(false)
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [buttonClickedCrypto]);
+    }, [debouncedNomeCrypto]);
 
     const handleCrypto = async () => {
         // setError(null)
         setLoading(true)
         try {
-            const res = await axios.get(`${BASE_URL}v2/crypto?coin=${nomeCrypto}&currency=BRL`);
+            const res = await axios.get(`${BASE_URL}v2/crypto?coin=${debouncedNomeCrypto}&currency=BRL`);
             setDataCrypto(res.data.coins);
             setLoading(false)
-            setNomeCrypto("")
             // console.log(res.data);
             toast.success("Criptomoeda encontrada!")
         } catch (error) {
@@ -64,9 +60,9 @@ const SearchCriptos = () => {
             <h2 style={{ color: 'white', textShadow: '-1px 0 black, 0 1px #0a95ff, 1px 0 #ff0000, 0 -1px black', letterSpacing: '3px' }}>Criptomoedas</h2>
             <ToastContainer />
             <CriptoList handleCryptoClick={handleCryptoClick} />
-            <div>
+            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', margin: '10px' }}>
                 <input type="text" className="input" placeholder="Buscar" value={nomeCrypto.toUpperCase()} onChange={(event) => setNomeCrypto(event.target.value)} />
-                <button onClick={handleCrypto} disabled={!nomeCrypto}>Buscar</button>
+                {/* <button onClick={handleCrypto} disabled={!nomeCrypto}>Buscar</button> */}
                 <button className="buttonAll" onClick={() => goToHomePage(navigate)} >Voltar</button>
 
             </div>

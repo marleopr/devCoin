@@ -9,36 +9,33 @@ import SquareLoader from "../../components/SquareLoader";
 import CoinLoader from "../../components/CoinLoader";
 import { goToHomePage } from "../../routes/Cordinator";
 import { useNavigate } from "react-router-dom";
+import useDebounce from "../../components/useDebounce";
 
 const SearchAcoes = () => {
     const navigate = useNavigate()
 
     const [data, setData] = useState([]);
-    // const tickers = 'COGN3,^BVSP';
-    // const tickers = 'amer3';
+
     const [nome, setNome] = useState("")
     const [loading, setLoading] = useState(false)
-    // const [error, setError] = useState(null)
-    const [buttonClicked, setButtonClicked] = useState(false);
 
+    const debouncedNome = useDebounce(nome, 800);
 
     useEffect(() => {
-        if (buttonClicked) {
-            handleAcoes();
-            setButtonClicked(false)
+        if (debouncedNome) {
+            handleAcoes()
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [buttonClicked]);
+    }, [debouncedNome])
 
     const handleAcoes = async () => {
         // setError(null)
         setLoading(true)
         try {
-            // const res = await axios.get(`https://brapi.dev/api/quote/PETR4%2C%5EBVSP?range=1d&interval=1d&fundamental=true&dividends=true`);
-            const res = await axios.get(`${BASE_URL}quote/${nome}?range=1d&interval=1d&fundamental=true&dividends=true`);
+            const res = await axios.get(`${BASE_URL}quote/${debouncedNome}?range=1d&interval=1d&fundamental=true&dividends=true`);
             setData(res.data.results);
             setLoading(false)
-            setNome("")
+            // setNome("")
             // console.log(res.data.results);
             toast.success("Ação encontrada!")
         } catch (error) {
@@ -65,9 +62,9 @@ const SearchAcoes = () => {
             <ToastContainer />
             <h2 style={{ color: 'white', textShadow: '-1px 0 black, 0 1px #0a95ff, 1px 0 #ff0000, 0 -1px black', letterSpacing: '3px' }}>Ações</h2>
             <AcoesList handleAcoesClick={handleAcoesClick} />
-            <div>
+            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', margin: '10px' }}>
                 <input style={{ color: 'white' }} type="text" className="input" placeholder="Buscar" value={nome.toUpperCase()} onChange={(event) => setNome(event.target.value)} />
-                <button onClick={handleAcoes} disabled={!nome}>Buscar</button>
+                {/* <button onClick={handleAcoes} disabled={!nome}>Buscar</button> */}
                 <button className="buttonAll" onClick={() => goToHomePage(navigate)} >Voltar</button>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>

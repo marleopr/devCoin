@@ -670,8 +670,8 @@ label {
 
 /* BUTTON */
 .buttonAll {
-  height: 30px;
-  margin: 5px;
+  height: 38px;
+  margin: 10px;
   width: 70px;
   cursor: pointer;
   background: #7c4dff;
