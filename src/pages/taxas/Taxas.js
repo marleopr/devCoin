@@ -8,6 +8,7 @@ import { goToHomePage } from "../../routes/Cordinator";
 import { useNavigate } from "react-router-dom";
 import CardTaxas from "./CardTaxas";
 import CardSelic from "./CardSelic";
+import { styled } from "styled-components";
 
 const Taxas = () => {
     const navigate = useNavigate()
@@ -48,17 +49,17 @@ const Taxas = () => {
         <div className="App">
             <h2 style={{ color: 'white', textShadow: '-1px 0 black, 0 1px #0a95ff, 1px 0 #ff0000, 0 -1px black', letterSpacing: '3px' }}>Taxas</h2>
             <div>
-                <button onClick={() => goToHomePage(navigate)} >Voltar</button>
+                <button className="buttonAll" onClick={() => goToHomePage(navigate)} >Voltar</button>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
                 {loading ? (
                     <CoinLoader />
                 ) : (
                     dataTaxas && dataTaxas.length > 0 ? (
-                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                        <CardContainer >
                             <CardTaxas dataTaxas={dataTaxas} />
                             <CardSelic dataSelic={dataSelic} />
-                        </div>
+                        </CardContainer>
                     ) : (
                         <SquareLoader />
                     )
@@ -68,3 +69,13 @@ const Taxas = () => {
     );
 }
 export default Taxas
+
+const CardContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-device-width: 480px) {
+    flex-direction: column;
+  }
+`

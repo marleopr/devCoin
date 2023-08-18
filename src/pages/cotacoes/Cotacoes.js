@@ -35,7 +35,7 @@ const Cotacoes = () => {
         <div className="App">
             <h2 style={{ color: 'white', textShadow: '-1px 0 black, 0 1px #0a95ff, 1px 0 #ff0000, 0 -1px black', letterSpacing: '3px' }}>Cotações</h2>
             <div>
-                <button onClick={() => goToHomePage(navigate)} >Voltar</button>
+                <button className="buttonAll" onClick={() => goToHomePage(navigate)} >Voltar</button>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
                 {loading ? (

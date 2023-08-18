@@ -2,6 +2,7 @@
 // import { goToCotacoes, goToSearchAcoes, goToSearchCriptos } from "../routes/Cordinator"
 import SquareLoader from "../components/SquareLoader"
 import RadioButtons from "../components/RadioButtons"
+import EasterEgg from "../components/EasterEgg"
 const HomePage = () => {
     // const navigate = useNavigate()
 
@@ -42,6 +43,7 @@ const HomePage = () => {
                 </div>
             </div> */}
             <RadioButtons />
+            <EasterEgg />
             <div style={{ marginTop: '50px' }}>
                 <SquareLoader />
             </div>

@@ -36,7 +36,7 @@ const CardAcoes = ({ data }) => {
                                     <strong>{item.symbol}</strong>
                                 </div>
                                 <div className="market-cap">
-                                    <h5>Valor de mercado: {formatCurrency(item.marketCap, 'compact')}</h5>
+                                    <h5>Valor de mercado: {item.marketCap ? formatCurrency(item.marketCap, 'compact') : "N/D"}</h5>
                                 </div>
                                 <div className="variation">
                                     <h5>Variação (dia):

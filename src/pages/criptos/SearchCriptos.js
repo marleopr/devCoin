@@ -65,9 +65,9 @@ const SearchCriptos = () => {
             <ToastContainer />
             <CriptoList handleCryptoClick={handleCryptoClick} />
             <div>
-                <input type="text" placeholder="Buscar" value={nomeCrypto.toUpperCase()} onChange={(event) => setNomeCrypto(event.target.value)} />
+                <input type="text" className="input" placeholder="Buscar" value={nomeCrypto.toUpperCase()} onChange={(event) => setNomeCrypto(event.target.value)} />
                 <button onClick={handleCrypto} disabled={!nomeCrypto}>Buscar</button>
-                <button onClick={() => goToHomePage(navigate)} >Voltar</button>
+                <button className="buttonAll" onClick={() => goToHomePage(navigate)} >Voltar</button>
 
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>

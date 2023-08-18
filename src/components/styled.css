@@ -1,3 +1,5 @@
+@import "../constants/theme.css";
+
 /* CARD AÇÕES / CRIPTOS / COTAÇÕES */
 .card {
   width: 330px;
@@ -8,6 +10,7 @@
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 20px 0px;
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   margin: 5px;
+  color: rgb(238, 236, 236);
 }
 
 .card:hover {
@@ -21,8 +24,8 @@
   flex-direction: column;
   background: linear-gradient(
     45deg,
-    rgb(4, 159, 187) 0%,
-    rgb(80, 246, 255) 100%
+    var(--color-purple) 0%,
+    var(--color-blue) 100%
   );
   position: relative;
 }
@@ -169,20 +172,20 @@
 }
 
 .green {
-  color: green;
+  color: var(--color-green);
 }
 
 .red {
-  color: red;
+  color: var(--color-red);
 }
 
 .green-arrow {
-  color: green;
+  color: var(--color-green);
   margin-left: 5px;
 }
 
 .red-arrow {
-  color: red;
+  color: var(--color-red);
   margin-left: 5px;
 }
 
@@ -190,26 +193,23 @@
 .acoes-container {
   width: 100%;
   box-sizing: border-box;
-  /* border: 1px solid red; */
-  height: 100px; /* Removendo a altura fixa */
-  overflow-x: auto; /* Adicionando overflow-x para permitir a rolagem horizontal */
-  /* white-space: nowrap; Impedindo a quebra de linha dos itens */
+  height: 100px; 
+  overflow-x: auto;
   position: relative;
 }
 
 .acoes-list {
-  display: inline-block; /* Alterando para inline-block para que a lista fique em uma linha */
+  display: inline-block;
   gap: 10px;
   align-items: center;
   justify-content: center;
 }
 
 .acao-item {
-  display: inline-flex; /* Alterando para inline-flex para que os itens fiquem em uma linha */
+  display: inline-flex; 
   align-items: center;
   justify-content: center;
-  border: 1px solid rgb(0, 140, 255);
-  /* color: rgb(0, 140, 255); */
+  border: 1px solid var(--color-blue);
   color: white;
   text-shadow: -1px 0 black, 0 1px #0a37ff, 1px 0 #ff0000,
     0 -1px rgb(0, 81, 255);
@@ -218,7 +218,6 @@
   padding: 10px;
   font-weight: bold;
   font-size: 18px;
-  /* background-color: #fff; */
 }
 
 .acao-item:hover {
@@ -250,7 +249,7 @@
   position: absolute;
   width: 200px;
   height: 200px;
-  color: rgb(0, 140, 255);
+  color: var(--color-blue);
   font-size: 18px;
   text-align: center;
   line-height: 200px;
@@ -266,7 +265,7 @@
       #0059ff
     )
     1;
-  box-shadow: 0 0 100px rgb(0, 140, 255);
+  box-shadow: 0 0 100px var(--color-blue);
 }
 
 .front {
@@ -462,22 +461,22 @@ label {
 }
 
 #topleft {
-  border-image-source: linear-gradient(-45deg, #743ad5, rgb(0, 140, 255));
+  border-image-source: linear-gradient(-45deg, var(--color-purple), var(--color-blue));
   color: white;
 }
 
 #topright {
-  border-image-source: linear-gradient(45deg, #743ad5, rgb(0, 140, 255));
+  border-image-source: linear-gradient(45deg, var(--color-purple), var(--color-blue));
   color: white;
 }
 
 #bottomleft {
-  border-image-source: linear-gradient(-135deg, #743ad5, rgb(0, 140, 255));
+  border-image-source: linear-gradient(-135deg, var(--color-purple), var(--color-blue));
   color: white;
 }
 
 #bottomright {
-  border-image-source: linear-gradient(135deg, #743ad5, rgb(0, 140, 255));
+  border-image-source: linear-gradient(135deg, var(--color-purple), var(--color-blue));
   color: white;
 }
 
@@ -490,42 +489,74 @@ label {
 }
 
 #topleft:hover {
-  border-image-source: linear-gradient(-45deg, #743ad5, rgb(0, 140, 255));
-  background-image: linear-gradient(-45deg, #743ad5, rgb(0, 140, 255));
+  border-image-source: linear-gradient(
+    -45deg,
+    var(--color-purple),
+    var(--color-blue)
+  );
+  background-image: linear-gradient(
+    -45deg,
+    var(--color-purple),
+    var(--color-blue)
+  );
 }
 
 #topright:hover {
-  border-image-source: linear-gradient(45deg, #743ad5, rgb(0, 140, 255));
-  background-image: linear-gradient(45deg, #743ad5, rgb(0, 140, 255));
+  border-image-source: linear-gradient(
+    45deg,
+    var(--color-purple),
+    var(--color-blue)
+  );
+  background-image: linear-gradient(
+    45deg,
+    var(--color-purple),
+    var(--color-blue)
+  );
 }
 
 #bottomleft:hover {
-  border-image-source: linear-gradient(-135deg, #743ad5, rgb(0, 140, 255));
-  background-image: linear-gradient(-135deg, #743ad5, rgb(0, 140, 255));
+  border-image-source: linear-gradient(
+    -135deg,
+    var(--color-purple),
+    var(--color-blue)
+  );
+  background-image: linear-gradient(
+    -135deg,
+    var(--color-purple),
+    var(--color-blue)
+  );
 }
 
 #bottomright:hover {
-  border-image-source: linear-gradient(135deg, #743ad5, rgb(0, 140, 255));
-  background-image: linear-gradient(135deg, #743ad5, rgb(0, 140, 255));
+  border-image-source: linear-gradient(
+    135deg,
+    var(--color-purple),
+    var(--color-blue)
+  );
+  background-image: linear-gradient(
+    135deg,
+    var(--color-purple),
+    var(--color-blue)
+  );
 }
 
 #topleft input[type="radio"]:checked ~ .selected {
-  box-shadow: 5px 5px 25px #743ad5, -5px -5px 25px rgb(0, 140, 255);
+  box-shadow: 5px 5px 25px var(--color-purple), -5px -5px 25px var(--color-blue);
   border-image-slice: 1;
 }
 
 #topright input[type="radio"]:checked ~ .selected {
-  box-shadow: -5px 5px 25px #743ad5, 5px -5px 25px rgb(0, 140, 255);
+  box-shadow: -5px 5px 25px var(--color-purple), 5px -5px 25px var(--color-blue);
   border-image-slice: 1;
 }
 
 #bottomleft input[type="radio"]:checked ~ .selected {
-  box-shadow: -5px 5px 25px rgb(0, 140, 255), 5px -5px 25px #743ad5;
+  box-shadow: -5px 5px 25px var(--color-blue), 5px -5px 25px var(--color-purple);
   border-image-slice: 1;
 }
 
 #bottomright input[type="radio"]:checked ~ .selected {
-  box-shadow: -5px -5px 25px #743ad5, 5px 5px 25px rgb(0, 140, 255);
+  box-shadow: -5px -5px 25px var(--color-purple), 5px 5px 25px var(--color-blue);
   border-image-slice: 1;
 }
 
@@ -543,14 +574,158 @@ label {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(0, 140, 255);
+  background: var(--color-blue);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(7, 110, 194);
+  background: var(--color-blue-nav);
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background: rgb(1, 80, 144);
+  background: var(--color-blue-navy);
+}
+
+/* DownloadButton */
+.buttonDownload {
+  display: inline-block;
+  position: relative;
+  padding: 10px 25px;
+  background-color: var(--color-blue);
+  color: white;
+  font-family: sans-serif;
+  text-decoration: none;
+  font-size: 0.8em;
+  text-align: center;
+  text-indent: 15px;
+  border: none;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.buttonDownload:hover {
+  background-color: var(--color-blue-nav);
+  color: white;
+}
+
+.buttonDownload:before,
+.buttonDownload:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 15px;
+  top: 52%;
+}
+
+.buttonDownload:before {
+  width: 10px;
+  height: 2px;
+  border-style: solid;
+  border-width: 0 2px 2px;
+}
+
+.buttonDownload:after {
+  width: 0;
+  height: 0;
+  margin-left: 3px;
+  margin-top: -7px;
+  border-style: solid;
+  border-width: 4px 4px 0 4px;
+  border-color: transparent;
+  border-top-color: inherit;
+  animation: downloadArrow 1s linear infinite;
+  animation-play-state: paused;
+}
+
+.buttonDownload:hover:before {
+  border-color: #cdefbd;
+}
+
+.buttonDownload:hover:after {
+  border-top-color: #cdefbd;
+  animation-play-state: running;
+}
+
+@keyframes downloadArrow {
+  0% {
+    margin-top: -7px;
+    opacity: 1;
+  }
+
+  0.001% {
+    margin-top: -15px;
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    margin-top: 0;
+    opacity: 0.4;
+  }
+}
+
+/* BUTTON */
+.buttonAll {
+  height: 30px;
+  margin: 5px;
+  width: 70px;
+  cursor: pointer;
+  background: #7c4dff;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: Consolas, Courier New, monospace;
+  border: solid var(--color-blue) 1px;
+  font-size: 16px;
+  color: rgb(161, 161, 161);
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  border-radius: 5px;
+  background: linear-gradient(145deg, var(--color-blue), var(--color-blue-nav));
+  -webkit-box-shadow: -1px -5px 15px var(--color-blue), 5px 5px 15px var(--color-blue),
+    inset 5px 5px 10px var(--color-blue-nav), inset -5px -5px 10px var(--color-blue-nav);
+  box-shadow: -1px -5px 15px var(--color-blue-navy), 5px 5px 15px var(--color-blue-navy),
+    inset 5px 5px 10px var(--color-blue-nav), inset -5px -5px 10px var(--color-blue-nav);
+}
+
+.buttonAll:hover {
+  -webkit-box-shadow: 1px 1px 13px var(--color-blue), -1px -1px 13px var(--color-blue);
+  box-shadow: 1px 1px 13px var(--color-blue), -1px -1px 13px var(--color-blue);
+  color: #d6d6d6;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.buttonAll:active {
+  -webkit-box-shadow: 1px 1px 13px var(--color-blue), -1px -1px 33px var(--color-blue);
+  box-shadow: 1px 1px 13px var(--color-blue), -1px -1px 33px var(--color-blue);
+  color: #d6d6d6;
+  -webkit-transition: 100ms;
+  transition: 100ms;
+}
+
+/* INPUT */
+.input {
+  color: white;
+  border: 2px solid var(--color-blue);
+  text-shadow: -1px 0 black, 0 1px #0a37ff, 1px 0 #ff0000,
+    0 -1px rgb(0, 81, 255);
+  border-radius: 10px;
+  padding: 10px 25px;
+  background: transparent;
+  max-width: 190px;
+}
+
+.input:active {
+  box-shadow: 2px 2px 15px var(--color-blue) inset;
+}
+.input::placeholder {
+  color: white;
 }
