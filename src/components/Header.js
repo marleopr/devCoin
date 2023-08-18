@@ -6,6 +6,7 @@ const Header = () => {
     const handleReloadHomePage = () => {
         window.location.reload();
     };
+
     return (
         <div>
             <div style={{ cursor: "pointer" }} onClick={() => handleReloadHomePage()}>

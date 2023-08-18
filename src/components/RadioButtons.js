@@ -6,7 +6,6 @@ const RadioButtons = () => {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
-
             <label onClick={() => goToSearchAcoes(navigate)} id="topleft" className="container">
                 <input name="my-radio-button" type="radio" />
                 <label id="tl"> <br />Ações</label>

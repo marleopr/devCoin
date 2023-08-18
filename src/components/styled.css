@@ -148,26 +148,15 @@
 }
 
 .symbol {
-  /* margin: 5px 0; */
   text-align: end;
   margin-right: 5px;
-  /* margin-bottom: 15px; */
 }
 
 .market-cap {
-  /* margin: 5px 0; */
-  /* border-top: 1px solid rgba(255, 165, 0, 0.5); */
-  /* padding-top: 5px; */
   margin-right: 5px;
-  /* border: 1px solid orange; */
 }
 
 .variation {
-  /* margin: 5px 0; */
-  /* border-top: 1px solid rgba(0, 128, 0, 0.5); */
-  /* padding-top: 5px; */
-  /* border: 1px solid red; */
-  /* margin-top: 0; */
   margin-right: 5px;
 }
 
@@ -193,7 +182,7 @@
 .acoes-container {
   width: 100%;
   box-sizing: border-box;
-  height: 100px; 
+  height: 100px;
   overflow-x: auto;
   position: relative;
 }
@@ -206,7 +195,7 @@
 }
 
 .acao-item {
-  display: inline-flex; 
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--color-blue);
@@ -461,22 +450,38 @@ label {
 }
 
 #topleft {
-  border-image-source: linear-gradient(-45deg, var(--color-purple), var(--color-blue));
+  border-image-source: linear-gradient(
+    -45deg,
+    var(--color-purple),
+    var(--color-blue)
+  );
   color: white;
 }
 
 #topright {
-  border-image-source: linear-gradient(45deg, var(--color-purple), var(--color-blue));
+  border-image-source: linear-gradient(
+    45deg,
+    var(--color-purple),
+    var(--color-blue)
+  );
   color: white;
 }
 
 #bottomleft {
-  border-image-source: linear-gradient(-135deg, var(--color-purple), var(--color-blue));
+  border-image-source: linear-gradient(
+    -135deg,
+    var(--color-purple),
+    var(--color-blue)
+  );
   color: white;
 }
 
 #bottomright {
-  border-image-source: linear-gradient(135deg, var(--color-purple), var(--color-blue));
+  border-image-source: linear-gradient(
+    135deg,
+    var(--color-purple),
+    var(--color-blue)
+  );
   color: white;
 }
 
@@ -689,14 +694,18 @@ label {
   transition: 500ms;
   border-radius: 5px;
   background: linear-gradient(145deg, var(--color-blue), var(--color-blue-nav));
-  -webkit-box-shadow: -1px -5px 15px var(--color-blue), 5px 5px 15px var(--color-blue),
-    inset 5px 5px 10px var(--color-blue-nav), inset -5px -5px 10px var(--color-blue-nav);
-  box-shadow: -1px -5px 15px var(--color-blue-navy), 5px 5px 15px var(--color-blue-navy),
-    inset 5px 5px 10px var(--color-blue-nav), inset -5px -5px 10px var(--color-blue-nav);
+  -webkit-box-shadow: -1px -5px 15px var(--color-blue),
+    5px 5px 15px var(--color-blue), inset 5px 5px 10px var(--color-blue-nav),
+    inset -5px -5px 10px var(--color-blue-nav);
+  box-shadow: -1px -5px 15px var(--color-blue-navy),
+    5px 5px 15px var(--color-blue-navy),
+    inset 5px 5px 10px var(--color-blue-nav),
+    inset -5px -5px 10px var(--color-blue-nav);
 }
 
 .buttonAll:hover {
-  -webkit-box-shadow: 1px 1px 13px var(--color-blue), -1px -1px 13px var(--color-blue);
+  -webkit-box-shadow: 1px 1px 13px var(--color-blue),
+    -1px -1px 13px var(--color-blue);
   box-shadow: 1px 1px 13px var(--color-blue), -1px -1px 13px var(--color-blue);
   color: #d6d6d6;
   -webkit-transition: 500ms;
@@ -704,7 +713,8 @@ label {
 }
 
 .buttonAll:active {
-  -webkit-box-shadow: 1px 1px 13px var(--color-blue), -1px -1px 33px var(--color-blue);
+  -webkit-box-shadow: 1px 1px 13px var(--color-blue),
+    -1px -1px 33px var(--color-blue);
   box-shadow: 1px 1px 13px var(--color-blue), -1px -1px 33px var(--color-blue);
   color: #d6d6d6;
   -webkit-transition: 100ms;

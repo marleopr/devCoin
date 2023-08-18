@@ -13,7 +13,6 @@ const CardAcoes = ({ data }) => {
         return new Intl.NumberFormat('pt-BR', options).format(value);
     };
 
-
     const formatDateAndTime = (dateTimeString) => {
         const parsedDate = new Date(dateTimeString);
         return format(parsedDate, "dd/MM/yyyy, HH:mm:ss");
@@ -30,7 +29,6 @@ const CardAcoes = ({ data }) => {
                                 <img style={{ borderRadius: '20%', width: '50px' }} src={item.logourl} alt={item.logourl} />
                                 <h6>{formatDateAndTime(item.regularMarketTime)}</h6>
                             </div>
-                            {/* <div className="social-media"> */}
                             <div className="data-container">
                                 <div className="symbol">
                                     <strong>{item.symbol}</strong>

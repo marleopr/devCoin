@@ -13,9 +13,9 @@ const CardCriptos = ({ dataCrypto }) => {
     };
 
     const formatDateAndTime = (timestamp) => {
-        const parsedDate = new Date(timestamp * 1000); // Convertendo para milissegundos
+        const parsedDate = new Date(timestamp * 1000);
         const options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-        const formattedDate = parsedDate.toLocaleDateString('pt-BR', options); // Formatando para string legível
+        const formattedDate = parsedDate.toLocaleDateString('pt-BR', options);
         return formattedDate;
     };
 
@@ -30,7 +30,6 @@ const CardCriptos = ({ dataCrypto }) => {
                                 <img style={{ borderRadius: '20%', width: '50px' }} src={item.coinImageUrl} alt={item.coinImageUrl} />
                                 <h6>{formatDateAndTime(item.regularMarketTime)}</h6>
                             </div>
-                            {/* <div className="social-media"> */}
                             <div className="data-container">
                                 <div className="symbol">
                                     <strong>{item.coin}</strong>
@@ -48,7 +47,6 @@ const CardCriptos = ({ dataCrypto }) => {
                                     </h5>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                     <div className="bottom-section">

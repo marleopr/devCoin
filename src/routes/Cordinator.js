@@ -13,6 +13,3 @@ export const goToCotacoes = (navigate) => {
 export const goToTaxas = (navigate) => {
     navigate("/taxas")
 }
-// export const goBack = (navigate) => {
-//     navigate(-1)
-// }

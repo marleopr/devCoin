@@ -10,7 +10,6 @@ const SquareLoader = () => {
                 <div className="face bottom">Developer</div>
             </div>
         </div>
-
     )
 }
 export default SquareLoader

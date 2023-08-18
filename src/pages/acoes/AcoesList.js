@@ -17,7 +17,6 @@ const AcoesList = ({ handleAcoesClick }) => {
             const res = await axios.get(`${BASE_URL}available`)
             setAllData(res.data.stocks)
             setLoadingList(false)
-            // console.log(res.data.stocks)
         } catch (error) {
             console.error(error)
             setLoadingList(false)
@@ -25,15 +24,6 @@ const AcoesList = ({ handleAcoesClick }) => {
     }
 
     return (
-        // <div>
-        //     <div style={{ width: '100vw', border: '1px solid red', height: '100px', overflow: 'auto', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr', textAlign: 'center' }}>
-        //         {allData.map((item, index) => (
-        //             <div key={index} onClick={() => handleAcoesClick(item)} >
-        //                 <strong>{item}</strong>
-        //             </div>
-        //         ))}
-        //     </div>
-        // </div>
         <div className="acoes-container">
             {loadingList ? (
                 <CoinLoader />

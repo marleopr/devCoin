@@ -17,7 +17,6 @@ const CriptoList = ({ handleCryptoClick }) => {
             const res = await axios.get(`${BASE_URL}v2/crypto/available`)
             setAllDataCrypto(res.data.coins)
             setLoadingListCriptos(false)
-            // console.log(res.data.coins)
         } catch (error) {
             console.error(error)
             setLoadingListCriptos(false)

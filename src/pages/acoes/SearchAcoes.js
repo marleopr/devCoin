@@ -29,14 +29,11 @@ const SearchAcoes = () => {
     }, [debouncedNome])
 
     const handleAcoes = async () => {
-        // setError(null)
         setLoading(true)
         try {
             const res = await axios.get(`${BASE_URL}quote/${debouncedNome}?range=1d&interval=1d&fundamental=true&dividends=true`);
             setData(res.data.results);
             setLoading(false)
-            // setNome("")
-            // console.log(res.data.results);
             toast.success("Ação encontrada!")
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -64,7 +61,6 @@ const SearchAcoes = () => {
             <AcoesList handleAcoesClick={handleAcoesClick} />
             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', margin: '10px' }}>
                 <input style={{ color: 'white' }} type="text" className="input" placeholder="Buscar" value={nome.toUpperCase()} onChange={(event) => setNome(event.target.value)} />
-                {/* <button onClick={handleAcoes} disabled={!nome}>Buscar</button> */}
                 <button className="buttonAll" onClick={() => goToHomePage(navigate)} >Voltar</button>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>

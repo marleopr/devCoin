@@ -28,13 +28,11 @@ const SearchCriptos = () => {
     }, [debouncedNomeCrypto]);
 
     const handleCrypto = async () => {
-        // setError(null)
         setLoading(true)
         try {
             const res = await axios.get(`${BASE_URL}v2/crypto?coin=${debouncedNomeCrypto}&currency=BRL`);
             setDataCrypto(res.data.coins);
             setLoading(false)
-            // console.log(res.data);
             toast.success("Criptomoeda encontrada!")
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -62,9 +60,7 @@ const SearchCriptos = () => {
             <CriptoList handleCryptoClick={handleCryptoClick} />
             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', margin: '10px' }}>
                 <input type="text" className="input" placeholder="Buscar" value={nomeCrypto.toUpperCase()} onChange={(event) => setNomeCrypto(event.target.value)} />
-                {/* <button onClick={handleCrypto} disabled={!nomeCrypto}>Buscar</button> */}
                 <button className="buttonAll" onClick={() => goToHomePage(navigate)} >Voltar</button>
-
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
                 {loading ? (

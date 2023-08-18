@@ -4,11 +4,7 @@ import brapiLogo from "../assets/brapiFooter.png"
 
 const Footer = () => {
     return (
-        // <div style={{ marginBottom: "20px", position: "fixed", bottom: 0, width: "100%", backgroundColor: "#f9f9f9" }}>
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', bottom: 0, width: "100%", boxSizing: 'border-box', textAlign: 'center' }}>
-            {/* <div style={{ margin: "20px" }} className="social-buttons">
-            
-            </div> */}
             <div className="card-footer" style={{ margin: "20px" }}>
                 <a className="social-link1"
                     href="https://github.com/marleopr"
