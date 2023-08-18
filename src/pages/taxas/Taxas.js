@@ -6,8 +6,8 @@ import SquareLoader from "../../components/SquareLoader";
 import CoinLoader from "../../components/CoinLoader";
 import { goToHomePage } from "../../routes/Cordinator";
 import { useNavigate } from "react-router-dom";
-import CardTaxas from "../../components/CardTaxas";
-import CardSelic from "../../components/CardSelic";
+import CardTaxas from "./CardTaxas";
+import CardSelic from "./CardSelic";
 
 const Taxas = () => {
     const navigate = useNavigate()

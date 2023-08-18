@@ -1,7 +1,6 @@
-import { format } from "date-fns";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 
-const CardAcoes = ({ data }) => {
+const CardCriptos = ({ dataCrypto }) => {
 
     const formatCurrency = (value, notation = 'standard') => {
         const options = {
@@ -13,27 +12,28 @@ const CardAcoes = ({ data }) => {
         return new Intl.NumberFormat('pt-BR', options).format(value);
     };
 
-
-    const formatDateAndTime = (dateTimeString) => {
-        const parsedDate = new Date(dateTimeString);
-        return format(parsedDate, "dd/MM/yyyy, HH:mm:ss");
+    const formatDateAndTime = (timestamp) => {
+        const parsedDate = new Date(timestamp * 1000); // Convertendo para milissegundos
+        const options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        const formattedDate = parsedDate.toLocaleDateString('pt-BR', options); // Formatando para string legível
+        return formattedDate;
     };
 
     return (
         <>
-            {data.map((item) => (
-                <div key={item.symbol} className="card">
+            {dataCrypto.map((item, index) => (
+                <div key={index} className="card">
                     <div className="top-section">
                         <div className="border"></div>
                         <div className="icons">
                             <div className="logo">
-                                <img style={{ borderRadius: '20%', width: '50px' }} src={item.logourl} alt={item.logourl} />
+                                <img style={{ borderRadius: '20%', width: '50px' }} src={item.coinImageUrl} alt={item.coinImageUrl} />
                                 <h6>{formatDateAndTime(item.regularMarketTime)}</h6>
                             </div>
                             {/* <div className="social-media"> */}
                             <div className="data-container">
                                 <div className="symbol">
-                                    <strong>{item.symbol}</strong>
+                                    <strong>{item.coin}</strong>
                                 </div>
                                 <div className="market-cap">
                                     <h5>Valor de mercado: {formatCurrency(item.marketCap, 'compact')}</h5>
@@ -52,7 +52,7 @@ const CardAcoes = ({ data }) => {
                         </div>
                     </div>
                     <div className="bottom-section">
-                        <span className="title">{item.longName}</span>
+                        <span className="title">{item.coinName}</span>
                         <div className="row row1">
                             <div className="item">
                                 <span className="big-text">{formatCurrency(item.regularMarketPrice)}</span>
@@ -73,4 +73,4 @@ const CardAcoes = ({ data }) => {
         </>
     )
 }
-export default CardAcoes
+export default CardCriptos

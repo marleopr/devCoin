@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { BASE_URL } from "../../constants/BASE_URL";
-import CardCripto from "../../components/CardCripto";
-import CriptoList from "../lists/CriptoList";
+import CardCriptos from "./CardCriptos";
+import CriptoList from "./CriptoList";
 import SquareLoader from "../../components/SquareLoader";
 import CoinLoader from "../../components/CoinLoader";
 import { goToHomePage } from "../../routes/Cordinator";
@@ -75,7 +75,7 @@ const SearchCriptos = () => {
                     <CoinLoader />
                 ) : (
                     dataCrypto && dataCrypto.length > 0 ? (
-                        <CardCripto dataCrypto={dataCrypto} />
+                        <CardCriptos dataCrypto={dataCrypto} />
                     ) : (
                         <SquareLoader />
                     )

@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
-import devCoinLogo from "../assets/devCoin Logo.png"
-// import DownloadButton from "../components/loadersButtons/DownloadButton";
+import devCoinLogo from "../assets/devCoin logo bit.png"
+import DownloadButton from "./DownloadButton";
 const Header = () => {
 
     const handleReloadHomePage = () => {
@@ -11,7 +11,7 @@ const Header = () => {
             <div style={{ cursor: "pointer" }} onClick={() => handleReloadHomePage()}>
                 <ImgLogo src={devCoinLogo} />
             </div>
-            {/* <DownloadButton /> */}
+            <DownloadButton />
         </div>
     )
 }

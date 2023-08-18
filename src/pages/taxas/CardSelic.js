@@ -1,13 +1,13 @@
 import { styled } from "styled-components";
-import BR from '../assets/bandeira-do-brasil.png'
+import BR from '../../assets/bandeira-do-brasil.png'
 
-const CardTaxas = ({ dataTaxas }) => {
+const CardSelic = ({ dataSelic }) => {
 
     return (
         <>
             <Main>
-                {dataTaxas.map((item) => (
-                    <div key={item.symbol} className="card">
+                {dataSelic.map((item, index) => (
+                    <div key={index} className="card">
                         <div className="top-section">
                             <div className="border"></div>
                             <div className="icons">
@@ -17,10 +17,10 @@ const CardTaxas = ({ dataTaxas }) => {
                                 </div>
                                 <div className="data-container">
                                     <div className="symbol">
-                                        <strong>Inflação</strong>
+                                        <strong>Selic</strong>
                                     </div>
                                     <div className="market-cap">
-                                        <h5>IPCA acumulado de 12 meses: <br></br> <br></br>{item.value}%</h5>
+                                        <h5>Valor da taxa Selic hoje: <br></br> <br></br>{item.value}%</h5>
                                     </div>
                                     <div className="variation">
                                     </div>
@@ -36,7 +36,7 @@ const CardTaxas = ({ dataTaxas }) => {
         </>
     )
 }
-export default CardTaxas
+export default CardSelic
 
 const Main = styled.div`
     display: flex;

@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import HomePage from "../pages/HomePage"
-import SearchAcoes from "../pages/Search/SearchAcoes"
-import SearchCriptos from "../pages/Search/SearchCriptos"
-import ErrorPage from "../pages/ErrorPage"
+import SearchAcoes from "../pages/acoes/SearchAcoes"
+import SearchCriptos from "../pages/criptos/SearchCriptos"
 import Cotacoes from "../pages/cotacoes/Cotacoes"
 import Taxas from "../pages/taxas/Taxas"
+import ErrorPage from "../pages/ErrorPage"
 
 export const Router = () => {
     return (

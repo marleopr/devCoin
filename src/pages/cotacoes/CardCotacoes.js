@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 import { FaArrowDown, FaArrowUp, FaFlag } from "react-icons/fa";
-import USD from '../assets/estados-unidos.png'
-import EUR from '../assets/uniao-europeia.png'
-import GBP from '../assets/reino-unido.png'
+import USD from '../../assets/estados-unidos.png'
+import EUR from '../../assets/uniao-europeia.png'
+import GBP from '../../assets/reino-unido.png'
 
 const CardCotacoes = ({ dataCotacoes }) => {
 
@@ -33,8 +33,8 @@ const CardCotacoes = ({ dataCotacoes }) => {
     return (
         <>
             <Main>
-                {dataCotacoes.map((item) => (
-                    <div key={item.symbol} className="card">
+                {dataCotacoes.map((item, index) => (
+                    <div key={index} className="card">
                         <div className="top-section">
                             <div className="border"></div>
                             <div className="icons">
