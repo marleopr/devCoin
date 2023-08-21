@@ -98,35 +98,34 @@ Você pode implantar o projeto em um servidor web ou em plataformas de hospedage
 
 - Assets: Contém todas as imagens necessárias ao site.
 - Components: Contém os loaders utilizados:
-  -- CoinLoader.js: Loader utilizado no carregamento de informações da API.
-  -- DownloadButton.js: Componente do botão estilizado para instalação via PWA.
-  -- EasterEgg.js: Função para apresentar uma mensagem secreta no console de desenvolvimento.
-  -- Footer.js: Componente de rodapé.
-  -- Header.js: Componente de cabeçalho.
-  -- RadioButton.js: Componente do botão menu da tela inicial.
-  -- SquareLoader.js: Animação personalizada mostrada quando não há dados solicitados.
-  -- Styled.css: Arquivo contendo todas as estilizações CSS presentes no site.
-  -- useDebounce.js: Hook React para atrasar as solicitações da API através dos inputs.
+- - CoinLoader.js: Loader utilizado no carregamento de informações da API.
+- - DownloadButton.js: Componente do botão estilizado para instalação via PWA.
+- - EasterEgg.js: Função para apresentar uma mensagem secreta no console de desenvolvimento.
+- - Footer.js: Componente de rodapé.
+- - Header.js: Componente de cabeçalho.
+- - RadioButton.js: Componente do botão menu da tela inicial.
+- - SquareLoader.js: Animação personalizada mostrada quando não há dados solicitados.
+- - Styled.css: Arquivo contendo todas as estilizações CSS presentes no site.
+- - useDebounce.js: Hook React para atrasar as solicitações da API através dos inputs.
 - Constants:
-  -- BASE_URL.js: Contém a base da API utilizada.
-  -- theme.css: Arquivo CSS para padronização de cores do site.
+- - BASE_URL.js: Contém a base da API utilizada.
+- - theme.css: Arquivo CSS para padronização de cores do site.
 - Pages:
 - Acoes / Criptos:
-  -- AcoesList.js / CriptosList.js: Componente que renderiza a lista com todas as ações/criptomoedas presentes na API.
-  -- CardAcoes.js / CardCriptos.js: Componente que mapeia e renderiza as informações das ações/criptomoedas presentes na API.
-  -- SearchAcoes.js / SearchCriptos.js: Componente principal das páginas das ações/criptomoedas.
+- - AcoesList.js / CriptosList.js: Componente que renderiza a lista com todas as ações/criptomoedas presentes na API.
+- - CardAcoes.js / CardCriptos.js: Componente que mapeia e renderiza as informações das ações/criptomoedas presentes na API.
+- - SearchAcoes.js / SearchCriptos.js: Componente principal das páginas das ações/criptomoedas.
 - Cotacoes:
-  -- CardCotacoes.js: Componente que mapeia e renderiza as informações das cotações presentes na API.
-  -- Cotacoes.js: Componente principal da páginas de cotações.
-  -- ModalCotacoes.js: Componente que exibe a modal de conversão de moedas.
+- - CardCotacoes.js: Componente que mapeia e renderiza as informações das cotações presentes na API.
+- - Cotacoes.js: Componente principal da páginas de cotações.
+- - ModalCotacoes.js: Componente que exibe a modal de conversão de moedas.
 - Taxas:
-  -- CardSelic.js / CardTaxas.js: Componente que mapeia e renderiza as informações de taxas.
-  -- Taxas.js: Componente principal da página de taxas.
+- - CardSelic.js / CardTaxas.js: Componente que mapeia e renderiza as informações de taxas.
+- - Taxas.js: Componente principal da página de taxas.
 - ErrorPage.js: Página de erro.
 - HomePage.js: Componente da tela inicial.
 - Routes:
--- Cordinator / Router: Componentes do React Router Dom.
-
+- - Cordinator / Router: Componentes do React Router Dom.
 
 # `Tecnologias utilizadas`
 
